@@ -8,5 +8,6 @@ target "Feedback" do
     pod 'Parse'
     pod 'Then', '~> 1.0'
     pod 'Cartography'
+    pod 'JTProgressHUD’
 end
 

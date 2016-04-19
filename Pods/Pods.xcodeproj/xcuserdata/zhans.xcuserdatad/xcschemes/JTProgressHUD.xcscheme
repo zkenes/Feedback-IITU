@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'E2AC90C06D0BA0EC4BC23985CC600EEE'
-               BlueprintName = 'Then'
+               BlueprintIdentifier = 'B74ECA954BC1397F572DD1164100FC81'
+               BlueprintName = 'JTProgressHUD'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Then.framework'>
+               BuildableName = 'JTProgressHUD.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

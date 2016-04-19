@@ -1,21 +1,24 @@
 PODS:
   - Bolts/Tasks (1.7.0)
   - Cartography (0.6.0)
+  - JTProgressHUD (1.0.3)
   - Parse (1.13.0):
     - Bolts/Tasks (~> 1.6)
   - Then (1.0.1)
 
 DEPENDENCIES:
   - Cartography
+  - JTProgressHUD
   - Parse
   - Then (~> 1.0)
 
 SPEC CHECKSUMS:
   Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
   Cartography: 70af183a248547694a8cfaa6b989cb7e04589985
+  JTProgressHUD: d2519c41e664acb554932aac12f5a94b47d88a69
   Parse: f51c24d2feb412e4b2d6cc73d37cb24e8d0089bc
   Then: e0f10228179772ba4d0d9dd75e4c05e42e24013a
 
-PODFILE CHECKSUM: 1ad286788992edca2beddd829962644667fd5d25
+PODFILE CHECKSUM: 2812803aaad1a5190f02618eb06e828033118883
 
 COCOAPODS: 1.0.0.beta.6

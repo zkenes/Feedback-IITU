@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import CoreData
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,9 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        Parse.setApplicationId(ParseConstant.Identifier, clientKey: ParseConstant.ClientKey)
+        setupNavigationBarAppearance()
         
+        if let user = User.currentUser() {
+            print("\(#function) - Username[\(user.username)]")
+            loadMainPages()
+        }
+        else{
+            loadLoginPages()
+        }
         
-        loadLoginPages()
         return true
     }
 
@@ -31,6 +39,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func loadMainPages() {
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.backgroundColor = UIColor.whiteColor()
+        window?.makeKeyAndVisible()
+        window?.rootViewController = MainViewController()
     }
+    
+    func setupNavigationBarAppearance() {
+        
+        let appearance = UINavigationBar.appearance()
+        appearance.barTintColor = UIColor.appGreenColor()
+        appearance.shadowImage = UIImage()
+        appearance.titleTextAttributes = [ NSFontAttributeName: UIFont.avenirBold(fontSize: 22), NSForegroundColorAttributeName: UIColor.whiteColor() ]
+    }
+    
+    func setupBarButtonItemAppearance() {
+        let appearance = UIBarButtonItem.appearance()
+        appearance.setTitleTextAttributes([ NSFontAttributeName: UIFont.avenirBold(fontSize: 14)], forState: .Normal)
+        appearance.tintColor = UIColor.whiteColor()
+    }
+    
+    func setupSegmentedControlAppearance() {
+        let attributes = [NSFontAttributeName: UIFont.avenirBold(fontSize: 12)]
+        UISegmentedControl.appearance().setTitleTextAttributes(attributes, forState: .Normal)
+    }
+
 }
 

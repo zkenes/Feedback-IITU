@@ -9,6 +9,7 @@
 import UIKit
 import Then
 import Cartography
+import JTProgressHUD
 
 class SignInViewController: ViewController {
     
@@ -31,22 +32,21 @@ class SignInViewController: ViewController {
     let loginTextField = UITextField().then {
         $0.backgroundColor = UIColor.cloudsColor()
         let attr = [NSForegroundColorAttributeName : UIColor(white: 0.8, alpha: 1.0),
-                    NSFontAttributeName: UIFont(name: "AvenirNext-UltraLight", size: 12)!]
+                    NSFontAttributeName: UIFont.avenirUltraLight(fontSize: 12)]
         $0.attributedPlaceholder = NSAttributedString(string: "Login", attributes: attr)
-        $0.font = UIFont(name: "AvenirNext-Medium", size: 14)!
+        $0.font = UIFont.avenirMedium(fontSize: 14)
         $0.textColor = UIColor.lightGrayColor()
     }
     let passTextField = UITextField().then {
         $0.backgroundColor = UIColor.cloudsColor()
         let attr = [NSForegroundColorAttributeName : UIColor(white: 0.8, alpha: 1.0),
-            NSFontAttributeName: UIFont(name: "AvenirNext-UltraLight", size: 12)!]
+            NSFontAttributeName: UIFont.avenirUltraLight(fontSize: 12)]
         $0.attributedPlaceholder = NSAttributedString(string: "Password", attributes: attr)
-        $0.font = UIFont(name: "AvenirNext-Medium", size: 14)!
+        $0.font = UIFont.avenirMedium(fontSize: 14)
         $0.textColor = UIColor.lightGrayColor()
     }
-    
     let submitButton = UIButton().then {
-        $0.backgroundColor = UIColor.turquoiseColor()
+        $0.backgroundColor = UIColor.appGreenColor()
         $0.setTitle("SIGN IN", forState: .Normal)
         $0.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         $0.layer.cornerRadius = 25
@@ -60,6 +60,7 @@ class SignInViewController: ViewController {
         containerView.addSubview(loginTextField)
         containerView.addSubview(passTextField)
         view.addSubview(submitButton)
+        submitButton.addTarget(self, action: #selector(SignInViewController.submitButtonDidPress(_:)), forControlEvents: .TouchUpInside)
     }
     
     func updateConstraints(){
@@ -106,4 +107,27 @@ class SignInViewController: ViewController {
         setupViews()
         updateConstraints()
     }
+}
+
+extension SignInViewController {
+    
+    func submitButtonDidPress(sender: UIButton){
+        guard let username = loginTextField.text, password = passTextField.text else {
+            Drop.down("Empty credentials", state: .Warning)
+            return
+        }
+        
+        JTProgressHUD.show()
+        User.logInWithUsernameInBackground(username, password: password) { (user, error) in
+            JTProgressHUD.hide()
+            guard let user = user else {
+                Drop.down("\((error?.localizedDescription)!)", state: .Error)
+                return
+            }
+            print("\(#function) - Username[\(user.username)]")
+            let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            delegate.loadMainPages()
+        }
+    }
+    
 }

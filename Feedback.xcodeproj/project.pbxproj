@@ -10,6 +10,16 @@
 		5E046DF31CC55AF5006C80DC /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E046DF21CC55AF5006C80DC /* SignInViewController.swift */; };
 		5E046DF51CC55C2F006C80DC /* Drop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E046DF41CC55C2F006C80DC /* Drop.swift */; };
 		5E046DF81CC55EA3006C80DC /* UIColor+Tints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E046DF71CC55EA3006C80DC /* UIColor+Tints.swift */; };
+		5E046DFA1CC57BD7006C80DC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E046DF91CC57BD7006C80DC /* MainViewController.swift */; };
+		5E046DFC1CC57EDD006C80DC /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E046DFB1CC57EDD006C80DC /* FeedViewController.swift */; };
+		5E046DFE1CC57EF2006C80DC /* TeachersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E046DFD1CC57EF2006C80DC /* TeachersViewController.swift */; };
+		5E046E001CC57EFE006C80DC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E046DFF1CC57EFE006C80DC /* ProfileViewController.swift */; };
+		5E046E021CC6A4E2006C80DC /* UIImageScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E046E011CC6A4E2006C80DC /* UIImageScale.swift */; };
+		5E046E041CC6B0FE006C80DC /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E046E031CC6B0FE006C80DC /* Constant.swift */; };
+		5E046E061CC6B3C7006C80DC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E046E051CC6B3C7006C80DC /* User.swift */; };
+		5E046E081CC6B965006C80DC /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E046E071CC6B965006C80DC /* Feedback.swift */; };
+		5E046E0A1CC6BD24006C80DC /* FontAvenir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E046E091CC6BD24006C80DC /* FontAvenir.swift */; };
+		5E046E0C1CC6C0E6006C80DC /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E046E0B1CC6C0E6006C80DC /* FeedTableViewCell.swift */; };
 		5E8EA62C1CC27B67003EC312 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8EA62B1CC27B67003EC312 /* AppDelegate.swift */; };
 		5E8EA62E1CC27B67003EC312 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8EA62D1CC27B67003EC312 /* ViewController.swift */; };
 		5E8EA6311CC27B67003EC312 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E8EA62F1CC27B67003EC312 /* Main.storyboard */; };
@@ -42,6 +52,16 @@
 		5E046DF21CC55AF5006C80DC /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		5E046DF41CC55C2F006C80DC /* Drop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drop.swift; sourceTree = "<group>"; };
 		5E046DF71CC55EA3006C80DC /* UIColor+Tints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Tints.swift"; sourceTree = "<group>"; };
+		5E046DF91CC57BD7006C80DC /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		5E046DFB1CC57EDD006C80DC /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		5E046DFD1CC57EF2006C80DC /* TeachersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeachersViewController.swift; sourceTree = "<group>"; };
+		5E046DFF1CC57EFE006C80DC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5E046E011CC6A4E2006C80DC /* UIImageScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageScale.swift; sourceTree = "<group>"; };
+		5E046E031CC6B0FE006C80DC /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		5E046E051CC6B3C7006C80DC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5E046E071CC6B965006C80DC /* Feedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
+		5E046E091CC6BD24006C80DC /* FontAvenir.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAvenir.swift; sourceTree = "<group>"; };
+		5E046E0B1CC6C0E6006C80DC /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		5E8EA6281CC27B67003EC312 /* Feedback.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Feedback.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E8EA62B1CC27B67003EC312 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E8EA62D1CC27B67003EC312 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +113,10 @@
 				5E8EA62B1CC27B67003EC312 /* AppDelegate.swift */,
 				5E8EA62D1CC27B67003EC312 /* ViewController.swift */,
 				5E046DF21CC55AF5006C80DC /* SignInViewController.swift */,
+				5E046DF91CC57BD7006C80DC /* MainViewController.swift */,
+				5E046DFB1CC57EDD006C80DC /* FeedViewController.swift */,
+				5E046DFD1CC57EF2006C80DC /* TeachersViewController.swift */,
+				5E046DFF1CC57EFE006C80DC /* ProfileViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -100,6 +124,9 @@
 		5E046DEF1CC55937006C80DC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5E046E031CC6B0FE006C80DC /* Constant.swift */,
+				5E046E051CC6B3C7006C80DC /* User.swift */,
+				5E046E071CC6B965006C80DC /* Feedback.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -108,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				5E046DF41CC55C2F006C80DC /* Drop.swift */,
+				5E046E0B1CC6C0E6006C80DC /* FeedTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -128,6 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				5E046DF71CC55EA3006C80DC /* UIColor+Tints.swift */,
+				5E046E011CC6A4E2006C80DC /* UIImageScale.swift */,
+				5E046E091CC6BD24006C80DC /* FontAvenir.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -383,12 +413,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E046E061CC6B3C7006C80DC /* User.swift in Sources */,
+				5E046DFA1CC57BD7006C80DC /* MainViewController.swift in Sources */,
 				5E046DF31CC55AF5006C80DC /* SignInViewController.swift in Sources */,
+				5E046E001CC57EFE006C80DC /* ProfileViewController.swift in Sources */,
+				5E046E021CC6A4E2006C80DC /* UIImageScale.swift in Sources */,
 				5E8EA6341CC27B67003EC312 /* Feedback.xcdatamodeld in Sources */,
 				5E046DF81CC55EA3006C80DC /* UIColor+Tints.swift in Sources */,
 				5E8EA62E1CC27B67003EC312 /* ViewController.swift in Sources */,
+				5E046DFE1CC57EF2006C80DC /* TeachersViewController.swift in Sources */,
+				5E046E0C1CC6C0E6006C80DC /* FeedTableViewCell.swift in Sources */,
 				5E046DF51CC55C2F006C80DC /* Drop.swift in Sources */,
+				5E046DFC1CC57EDD006C80DC /* FeedViewController.swift in Sources */,
 				5E8EA62C1CC27B67003EC312 /* AppDelegate.swift in Sources */,
+				5E046E081CC6B965006C80DC /* Feedback.swift in Sources */,
+				5E046E0A1CC6BD24006C80DC /* FontAvenir.swift in Sources */,
+				5E046E041CC6B0FE006C80DC /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

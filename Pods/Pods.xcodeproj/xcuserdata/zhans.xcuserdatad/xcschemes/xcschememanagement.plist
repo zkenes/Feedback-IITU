@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>JTProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Parse.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,12 +42,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3BC517F5672D152FE19707AE513279E1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>AF5838B3E207164359A883A2526D5302</key>
+		<key>321DFA9865766781CC87F7755FAED1D6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,7 +52,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>B74ECA954BC1397F572DD1164100FC81</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C3A04698AAE4D6124C20602D622956E5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E2AC90C06D0BA0EC4BC23985CC600EEE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
