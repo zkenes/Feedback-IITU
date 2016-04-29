@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>HCSStarRatingView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JTProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -25,6 +30,11 @@
 			<false/>
 		</dict>
 		<key>Pods-Feedback.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftRandom.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -42,7 +52,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>321DFA9865766781CC87F7755FAED1D6</key>
+		<key>4A24C58393D857DC73B27598FE804553</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>70B3B736F8B73AF0334720ECBCFAC6EE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8293C3DC6EE748C319FF18E18C21F762</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ADBEA4D6BF9C4F9CE128C39B696CEEDC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -58,11 +83,6 @@
 			<true/>
 		</dict>
 		<key>C3A04698AAE4D6124C20602D622956E5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E2AC90C06D0BA0EC4BC23985CC600EEE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

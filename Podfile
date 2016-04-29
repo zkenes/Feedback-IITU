@@ -9,5 +9,7 @@ target "Feedback" do
     pod 'Then', '~> 1.0'
     pod 'Cartography'
     pod 'JTProgressHUD’
+    pod 'HCSStarRatingView'
+    pod 'SwiftRandom'
 end
 

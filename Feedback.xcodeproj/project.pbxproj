@@ -28,6 +28,8 @@
 		5E8EA6391CC27B67003EC312 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E8EA6371CC27B67003EC312 /* LaunchScreen.storyboard */; };
 		5E8EA6441CC27B67003EC312 /* FeedbackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8EA6431CC27B67003EC312 /* FeedbackTests.swift */; };
 		5E8EA64F1CC27B67003EC312 /* FeedbackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8EA64E1CC27B67003EC312 /* FeedbackUITests.swift */; };
+		5EFEA1F31CD3DC5D00CF4339 /* TeacherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFEA1F21CD3DC5D00CF4339 /* TeacherTableViewCell.swift */; };
+		5EFEA1F51CD4000400CF4339 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFEA1F41CD4000400CF4339 /* InfoView.swift */; };
 		B31E46F92703C61FFB0F5EC7 /* Pods_Feedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A9656117849D5A32C3D5E /* Pods_Feedback.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +78,8 @@
 		5E8EA64A1CC27B67003EC312 /* FeedbackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeedbackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E8EA64E1CC27B67003EC312 /* FeedbackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackUITests.swift; sourceTree = "<group>"; };
 		5E8EA6501CC27B67003EC312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EFEA1F21CD3DC5D00CF4339 /* TeacherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherTableViewCell.swift; sourceTree = "<group>"; };
+		5EFEA1F41CD4000400CF4339 /* InfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		93C990653195D0E91E48BEE1 /* Pods-Feedback.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feedback.release.xcconfig"; path = "Pods/Target Support Files/Pods-Feedback/Pods-Feedback.release.xcconfig"; sourceTree = "<group>"; };
 		C78149B311E49110E23209B4 /* Pods-Feedback.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feedback.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Feedback/Pods-Feedback.debug.xcconfig"; sourceTree = "<group>"; };
 		EC6A9656117849D5A32C3D5E /* Pods_Feedback.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Feedback.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +140,8 @@
 			children = (
 				5E046DF41CC55C2F006C80DC /* Drop.swift */,
 				5E046E0B1CC6C0E6006C80DC /* FeedTableViewCell.swift */,
+				5EFEA1F21CD3DC5D00CF4339 /* TeacherTableViewCell.swift */,
+				5EFEA1F41CD4000400CF4339 /* InfoView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -417,6 +423,7 @@
 				5E046DFA1CC57BD7006C80DC /* MainViewController.swift in Sources */,
 				5E046DF31CC55AF5006C80DC /* SignInViewController.swift in Sources */,
 				5E046E001CC57EFE006C80DC /* ProfileViewController.swift in Sources */,
+				5EFEA1F31CD3DC5D00CF4339 /* TeacherTableViewCell.swift in Sources */,
 				5E046E021CC6A4E2006C80DC /* UIImageScale.swift in Sources */,
 				5E8EA6341CC27B67003EC312 /* Feedback.xcdatamodeld in Sources */,
 				5E046DF81CC55EA3006C80DC /* UIColor+Tints.swift in Sources */,
@@ -428,6 +435,7 @@
 				5E8EA62C1CC27B67003EC312 /* AppDelegate.swift in Sources */,
 				5E046E081CC6B965006C80DC /* Feedback.swift in Sources */,
 				5E046E0A1CC6BD24006C80DC /* FontAvenir.swift in Sources */,
+				5EFEA1F51CD4000400CF4339 /* InfoView.swift in Sources */,
 				5E046E041CC6B0FE006C80DC /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

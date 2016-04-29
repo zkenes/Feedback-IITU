@@ -9,17 +9,19 @@
 import UIKit
 import Then
 import Cartography
+import SwiftRandom
 
 class FeedViewController: UIViewController {
 
     let tableView = UITableView().then { _ in
         
     }
-    var feedbackList: [Feedback]
+    var feedbackList: [Feedback] = []
     
     func setupViews(){
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.separatorInset = UIEdgeInsetsZero
         view.addSubview(tableView)
         title = "Feed"
     }
@@ -51,22 +53,30 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let identifier = "cellIdentifer"
         
-        var cell = tableView.dequeueReusableCellWithIdentifier(identifier)
+        var cell = tableView.dequeueReusableCellWithIdentifier(identifier) as? FeedTableViewCell
         if cell == nil {
-            cell = UITableViewCell(style: .Subtitle, reuseIdentifier: identifier)
+            cell = FeedTableViewCell(style: .Subtitle, reuseIdentifier: identifier)
         }
         
-        let feedback = feedbackList[indexPath.row]
+//        let feedback = feedbackList[indexPath.row]
         
-        cell?.textLabel?.text = "\(feedback.text)"
-        
+        cell?.textLabel?.text = Randoms.randomFakeNameAndEnglishHonorific()
+        cell?.imageView?.image = UIImage(named: "user\(indexPath.row % 6 + 1)")
+        cell?.detailTextLabel?.text = Randoms.randomFakeConversation() + " \n" + Randoms.randomFakeConversation()
+        cell?.ratingView.value = Randoms.randomCGFloat(0, 5)
         return cell!
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
         return feedbackList.count
     }
-    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 100
+    }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
     }
