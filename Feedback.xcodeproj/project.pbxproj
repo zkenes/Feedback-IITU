@@ -28,6 +28,7 @@
 		5E8EA6391CC27B67003EC312 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E8EA6371CC27B67003EC312 /* LaunchScreen.storyboard */; };
 		5E8EA6441CC27B67003EC312 /* FeedbackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8EA6431CC27B67003EC312 /* FeedbackTests.swift */; };
 		5E8EA64F1CC27B67003EC312 /* FeedbackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8EA64E1CC27B67003EC312 /* FeedbackUITests.swift */; };
+		5ECF285B1CD921AE0020D6B3 /* Favourite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECF285A1CD921AE0020D6B3 /* Favourite.swift */; };
 		5EFEA1F31CD3DC5D00CF4339 /* TeacherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFEA1F21CD3DC5D00CF4339 /* TeacherTableViewCell.swift */; };
 		5EFEA1F51CD4000400CF4339 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFEA1F41CD4000400CF4339 /* InfoView.swift */; };
 		B31E46F92703C61FFB0F5EC7 /* Pods_Feedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC6A9656117849D5A32C3D5E /* Pods_Feedback.framework */; };
@@ -78,6 +79,7 @@
 		5E8EA64A1CC27B67003EC312 /* FeedbackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeedbackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E8EA64E1CC27B67003EC312 /* FeedbackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackUITests.swift; sourceTree = "<group>"; };
 		5E8EA6501CC27B67003EC312 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5ECF285A1CD921AE0020D6B3 /* Favourite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favourite.swift; sourceTree = "<group>"; };
 		5EFEA1F21CD3DC5D00CF4339 /* TeacherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherTableViewCell.swift; sourceTree = "<group>"; };
 		5EFEA1F41CD4000400CF4339 /* InfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		93C990653195D0E91E48BEE1 /* Pods-Feedback.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feedback.release.xcconfig"; path = "Pods/Target Support Files/Pods-Feedback/Pods-Feedback.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				5E046E031CC6B0FE006C80DC /* Constant.swift */,
 				5E046E051CC6B3C7006C80DC /* User.swift */,
 				5E046E071CC6B965006C80DC /* Feedback.swift */,
+				5ECF285A1CD921AE0020D6B3 /* Favourite.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ECF285B1CD921AE0020D6B3 /* Favourite.swift in Sources */,
 				5E046E061CC6B3C7006C80DC /* User.swift in Sources */,
 				5E046DFA1CC57BD7006C80DC /* MainViewController.swift in Sources */,
 				5E046DF31CC55AF5006C80DC /* SignInViewController.swift in Sources */,

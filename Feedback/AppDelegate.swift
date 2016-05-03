@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        registerClasses()
         Parse.setApplicationId(ParseConstant.Identifier, clientKey: ParseConstant.ClientKey)
         setupNavigationBarAppearance()
         
@@ -46,7 +47,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func setupNavigationBarAppearance() {
-        
         let appearance = UINavigationBar.appearance()
         appearance.barTintColor = UIColor.appGreenColor()
         appearance.shadowImage = UIImage()
@@ -62,6 +62,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func setupSegmentedControlAppearance() {
         let attributes = [NSFontAttributeName: UIFont.avenirBold(fontSize: 12)]
         UISegmentedControl.appearance().setTitleTextAttributes(attributes, forState: .Normal)
+    }
+    func registerClasses(){
+        User.registerSubclass()
+        Feedback.registerSubclass()
+        Favourite.registerSubclass()
     }
 
 }

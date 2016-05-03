@@ -15,9 +15,7 @@ class Feedback: PFObject {
     @NSManaged var rating: Int
     @NSManaged var text: String
 }
-
 extension Feedback: PFSubclassing{
-    
     override class func initialize() {
         struct Static {
             static var onceToken : dispatch_once_t = 0;
@@ -26,22 +24,33 @@ extension Feedback: PFSubclassing{
             self.registerSubclass()
         }
     }
-    
     static func parseClassName() -> String {
         return ParseClass.Feedback
     }
-    
 }
 extension Feedback {
-    
-    static func fetchFeedback(offset: Int, limit: Int, closure:([Feedback]?, NSError?) -> Void){
+    static func fetchFeedback(forTeacher teacher: User, closure:([Feedback]?, NSError?) -> Void){
         let query = PFQuery(className: ParseClass.Feedback)
-        query.skip = offset
-        query.limit = limit
+        query.whereKey("teacher", equalTo: teacher)
         query.includeKey("teacher")
         query.findObjectsInBackgroundWithBlock { (objects, error) in
             closure(objects as? [Feedback], error)
         }
     }
-    
+    static func fetchFeedback(forStudent student:User, closure:([Feedback]?, NSError?) -> Void){
+        let query = PFQuery(className: ParseClass.Feedback)
+        query.whereKey("student", equalTo: student)
+        query.includeKey("teacher")
+        query.findObjectsInBackgroundWithBlock { (objects, error) in
+            closure(objects as? [Feedback], error)
+        }
+    }
+    static func fetchFeedbacks(teacherList:[User], closure:([Feedback]?, NSError?) -> Void){
+        let query = PFQuery(className: ParseClass.Feedback)
+        query.whereKey("teacher", containedIn: teacherList)
+        query.includeKey("teacher")
+        query.findObjectsInBackgroundWithBlock { (objects, error) in
+            closure(objects as? [Feedback], error)
+        }
+    }
 }

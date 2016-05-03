@@ -13,7 +13,7 @@ final class InfoView: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .darkGrayColor()
-        label.font = UIFont.avenirBold(fontSize: 22.5)
+        label.font = UIFont.avenirBold(fontSize: 20)
         label.textAlignment = .Center
         label.numberOfLines = 0
         return label
@@ -27,12 +27,14 @@ final class InfoView: UIView {
         label.alpha = 0.5
         return label
     }()
+    private var hasLoadConstraints: Bool = false
     
     // MARK: - Init
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         [titleLabel, subtitleLabel].forEach { self.addSubview($0) }
+        setupLayouts()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -42,12 +44,16 @@ final class InfoView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        setupLayouts()
+//        setupLayouts()
     }
     
     // MARK: - Private
     
     private func setupLayouts() {
+        if hasLoadConstraints{
+            return
+        }
+        hasLoadConstraints = true
         constrain(subtitleLabel){
             $0.height == 20
             $0.bottom == $0.superview!.bottom

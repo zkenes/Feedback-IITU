@@ -13,6 +13,9 @@ import SwiftRandom
 
 class ProfileViewController: UIViewController {
 
+    var user: User?
+    var feedbackList: [Feedback]?
+    
     let tableView = UITableView().then { _ in
         
     }
@@ -20,7 +23,7 @@ class ProfileViewController: UIViewController {
         $0.backgroundColor = .whiteColor()
     }
     let profileImageView = UIImageView().then {
-        $0.contentMode = .ScaleAspectFit
+        $0.contentMode = .ScaleAspectFill
         $0.clipsToBounds = true
         $0.layer.masksToBounds = true
         $0.layer.cornerRadius = 40
@@ -123,6 +126,42 @@ class ProfileViewController: UIViewController {
         setupViews()
         updateConstraints()
     }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let user = user {
+            print(user.username)
+            editButton.hidden = true
+        }
+        else{
+            user = User.currentUser()
+        }
+        guard let user = user else {return}
+        user.fetchInBackgroundWithBlock { (fetchedUser, error) in
+            guard let user = fetchedUser as? User else {return}
+            user.profileImage.getDataInBackgroundWithBlock { (imageData, error) in
+                if let imageData = imageData {
+                    self.profileImageView.image = UIImage(data: imageData)
+                }
+            }
+            self.titleLabel.text = user.name + " " + user.surname
+            print(user.name + "- " + user.surname)
+            if user.status == UserStatus.Student.rawValue{
+                Feedback.fetchFeedback(forStudent: user, closure: { (feedbacks, error) in
+                    guard let feedbacks = feedbacks else {return}
+                    self.feedbackList = feedbacks
+                    self.tableView.reloadData()
+                })
+            }
+            else{
+                Feedback.fetchFeedback(forTeacher: user, closure: { (feedbacks, error) in
+                    guard let feedbacks = feedbacks else {return}
+                    self.feedbackList = feedbacks
+                    self.tableView.reloadData()
+                })
+            }
+        }
+    }
 }
 extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     
@@ -133,18 +172,22 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         if cell == nil {
             cell = FeedTableViewCell(style: .Subtitle, reuseIdentifier: identifier)
         }
-        
-        //        let feedback = feedbackList[indexPath.row]
-        
-        cell?.textLabel?.text = Randoms.randomFakeNameAndEnglishHonorific()
+        let feedback = feedbackList![indexPath.row]
+        cell?.textLabel?.text = feedback.teacher.name + " " + feedback.teacher.surname//Randoms.randomFakeNameAndEnglishHonorific()
         cell?.imageView?.image = UIImage(named: "user\(indexPath.row % 6 + 1)")
-        cell?.detailTextLabel?.text = Randoms.randomFakeConversation() + " \n" + Randoms.randomFakeConversation()
-        cell?.ratingView.value = Randoms.randomCGFloat(0, 5)
+        feedback.teacher.profileImage.getDataInBackgroundWithBlock { (imageData, error) in
+            if let imageData = imageData {
+                cell?.imageView?.image = UIImage(data: imageData)
+            }
+        }
+        cell?.detailTextLabel?.text = feedback.text//Randoms.randomFakeConversation() + " \n" + Randoms.randomFakeConversation()
+        cell?.ratingView.value = CGFloat(feedback.rating)//Randoms.randomCGFloat(0, 5)
         return cell!
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        guard let feedbackList = feedbackList else {return 0}
+        return feedbackList.count
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return UITableViewAutomaticDimension

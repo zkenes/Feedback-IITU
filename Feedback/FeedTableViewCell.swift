@@ -10,7 +10,10 @@ import UIKit
 import Cartography
 import HCSStarRatingView
 
+
 class FeedTableViewCell: UITableViewCell {
+    
+    
     
     let ratingView: HCSStarRatingView = HCSStarRatingView().then {
         $0.maximumValue = 5

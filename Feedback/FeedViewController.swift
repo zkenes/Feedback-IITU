@@ -39,11 +39,28 @@ class FeedViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
         updateConstraints()
+//        
+//        Feedback.fetchFeedback(0, limit: 50) { (list, error) in
+//            guard let feedbackList = list else {return}
+//            self.feedbackList = feedbackList
+//            self.tableView.reloadData()
+//        }
         
-        Feedback.fetchFeedback(0, limit: 50) { (list, error) in
-            guard let feedbackList = list else {return}
-            self.feedbackList = feedbackList
-            self.tableView.reloadData()
+    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        Favourite.fetchFavourites { (favourites, error) in
+            guard let favourites = favourites else {return}
+            var teacherList: [User] = []
+            for favourite in favourites {
+                let teacher = favourite.user
+                teacherList.append(teacher)
+            }
+            Feedback.fetchFeedbacks(teacherList, closure: { (feedbacks, error) in
+                guard let feedbacks = feedbacks else {return}
+                self.feedbackList = feedbacks
+                self.tableView.reloadData()
+            })
         }
     }
 }
@@ -60,16 +77,26 @@ extension FeedViewController: UITableViewDataSource, UITableViewDelegate {
         
 //        let feedback = feedbackList[indexPath.row]
         
-        cell?.textLabel?.text = Randoms.randomFakeNameAndEnglishHonorific()
+//        cell?.textLabel?.text = Randoms.randomFakeNameAndEnglishHonorific()
+//        cell?.imageView?.image = UIImage(named: "user\(indexPath.row % 6 + 1)")
+//        cell?.detailTextLabel?.text = Randoms.randomFakeConversation() + " \n" + Randoms.randomFakeConversation()
+//        cell?.ratingView.value = Randoms.randomCGFloat(0, 5)
+        let feedback = feedbackList[indexPath.row]
+        cell?.textLabel?.text = feedback.teacher.name + " " + feedback.teacher.surname//Randoms.randomFakeNameAndEnglishHonorific()
         cell?.imageView?.image = UIImage(named: "user\(indexPath.row % 6 + 1)")
-        cell?.detailTextLabel?.text = Randoms.randomFakeConversation() + " \n" + Randoms.randomFakeConversation()
-        cell?.ratingView.value = Randoms.randomCGFloat(0, 5)
+        feedback.teacher.profileImage.getDataInBackgroundWithBlock { (imageData, error) in
+            if let imageData = imageData {
+                cell?.imageView?.image = UIImage(data: imageData)
+            }
+        }
+        cell?.detailTextLabel?.text = feedback.text//Randoms.randomFakeConversation() + " \n" + Randoms.randomFakeConversation()
+        cell?.ratingView.value = CGFloat(feedback.rating)//Randoms.randomCGFloat(0, 5)
         return cell!
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
         return feedbackList.count
+//        return feedbackList.count
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return UITableViewAutomaticDimension

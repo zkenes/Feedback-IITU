@@ -9,8 +9,15 @@
 import UIKit
 import Cartography
 
+protocol TeacherTableViewCellDelegate {
+    func favouriteButtonDidPress(cell: TeacherTableViewCell, button: UIButton)
+}
+
+
 class TeacherTableViewCell: UITableViewCell {
 
+    var delegate:TeacherTableViewCellDelegate?
+    
     let favouriteButton = UIButton().then {
         $0.backgroundColor = .whiteColor()
         $0.setImage(UIImage(named: "star_empty"), forState: .Normal)
@@ -65,6 +72,8 @@ class TeacherTableViewCell: UITableViewCell {
         contentView.layoutIfNeeded()
     }
     func favouriteButtonDidPress(sender: UIButton){
-        sender.selected = !sender.selected
+//        sender.selected = !sender.selected
+        guard let delegate = delegate else {return}
+        delegate.favouriteButtonDidPress(self, button: sender)
     }
 }
